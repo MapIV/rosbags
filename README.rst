@@ -55,7 +55,7 @@ Convert rosbag1 to rosbag2::
    rosbags-convert foo.bag --dst /path/to/bar
 
 
-Convert rosbag2 to rosbag1::
+Convert rosbag2 to rosbag1 (only clone repository)::
 
    # Convert "foo", save the result as "bar.bag"
    rosbags-convert-2to1 /path/to/foo --dst bar.bag

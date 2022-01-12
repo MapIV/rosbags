@@ -1,0 +1,5 @@
+uint64 guid
+float64 latitude
+float64 longitude
+string params
+

@@ -1,0 +1,37 @@
+# Inputs (e.g. button presses) for in-vehicle menus
+std_msgs/Header header
+
+bool str_whl_left_btn_left
+bool str_whl_left_btn_down
+bool str_whl_left_btn_right
+bool str_whl_left_btn_up
+bool str_whl_left_btn_ok
+
+bool str_whl_right_btn_left
+bool str_whl_right_btn_down
+bool str_whl_right_btn_right
+bool str_whl_right_btn_up
+bool str_whl_right_btn_ok
+
+bool cntr_cons_btn_left
+bool cntr_cons_btn_down
+bool cntr_cons_btn_right
+bool cntr_cons_btn_up
+bool cntr_cons_btn_ok
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

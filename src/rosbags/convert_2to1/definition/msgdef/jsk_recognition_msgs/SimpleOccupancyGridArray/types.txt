@@ -1,0 +1,16 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+jsk_recognition_msgs/SimpleOccupancyGrid[] grids
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  float32[4] coefficients
+  float32 resolution
+  geometry_msgs/Point[] cells
+    float64 x
+    float64 y
+    float64 z
+

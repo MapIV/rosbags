@@ -1,0 +1,12 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_map_msgs/LaneRelation[] data
+  uint8 None=0
+  uint8 Left=1
+  uint8 Right=2
+  int32 lane_id
+  int32 next_lane_id
+  int32 blinker
+

@@ -84,6 +84,8 @@ def ros1_to_cdr(raw: bytes, typename: str) -> memoryview:
         None,
         0,
     )
+    #print(ipos)
+    #print(len(raw))
     assert ipos == len(raw)
 
     raw = memoryview(raw)
@@ -101,8 +103,8 @@ def ros1_to_cdr(raw: bytes, typename: str) -> memoryview:
     assert opos + 4 == size
     return rawdata.toreadonly()
 
-
-def cdr_to_ros1(raw: bytes, typename: str) -> memoryview:
+counts={}
+def cdr_to_ros1(raw: bytes, typename: str, topic: str) -> memoryview:
     """Convert serialized CDR message directly to ROS1.
 
     This should be reasonably fast as conversions happen on a byte-level
@@ -118,15 +120,28 @@ def cdr_to_ros1(raw: bytes, typename: str) -> memoryview:
     """
     assert raw[1] == 1, 'Message byte order is not little endian'
 
-    msgdef = get_msgdef(typename)
+    #print(typename)
+
+    msgdef = get_msgdef(typename)   
+    #print(msgdef)
+    if topic not in counts:
+        counts[topic] = 0
 
     ipos, opos = msgdef.getsize_cdr_to_ros1(
         raw[4:],
         0,
         None,
         0,
+        counts[topic],
     )
-    assert ipos + 4 == len(raw)
+    #assert ipos + 4 == len(raw)
+
+    #hoge=deserialize_cdr(raw,typename)
+    #print(msgdef)
+    #print(hoge)
+
+    #print([ipos,opos])
+    #print(opos)
 
     raw = memoryview(raw)
     size = opos
@@ -137,7 +152,12 @@ def cdr_to_ros1(raw: bytes, typename: str) -> memoryview:
         0,
         rawdata,
         0,
+        counts[topic],
     )
-    assert ipos + 4 == len(raw)
-    assert opos == size
+
+    counts[topic] += 1
+
+    #hoge2=deserialize_cdr(rawdata,typename)
+    #assert ipos + 4 == len(raw)
+    #assert opos == size
     return rawdata.toreadonly()

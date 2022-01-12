@@ -1,0 +1,6 @@
+uint8 channels
+uint32 sample_rate
+string sample_format
+uint32 bitrate
+string coding_format
+

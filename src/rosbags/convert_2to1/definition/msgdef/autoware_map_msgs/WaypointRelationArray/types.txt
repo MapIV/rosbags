@@ -1,0 +1,11 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_map_msgs/WaypointRelation[] data
+  int32 waypoint_id
+  int32 next_waypoint_id
+  float64 yaw
+  int32 blinker
+  float64 distance
+

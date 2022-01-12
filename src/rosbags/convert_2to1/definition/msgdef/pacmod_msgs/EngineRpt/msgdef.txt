@@ -1,0 +1,25 @@
+std_msgs/Header header
+
+float64 engine_speed
+float64 engine_torque
+int16 engine_coolant_temp
+bool engine_speed_avail
+bool engine_torque_avail
+bool engine_coolant_temp_avail
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

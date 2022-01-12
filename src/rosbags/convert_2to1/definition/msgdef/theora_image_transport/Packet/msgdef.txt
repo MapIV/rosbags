@@ -1,0 +1,26 @@
+# ROS message adaptation of the ogg_packet struct from libogg,
+# see http://www.xiph.org/ogg/doc/libogg/ogg_packet.html.
+
+Header header     # Original sensor_msgs/Image header
+uint8[] data      # Raw Theora packet data (combines packet and bytes fields from ogg_packet)
+int32 b_o_s       # Flag indicating whether this packet begins a logical bitstream
+int32 e_o_s       # Flag indicating whether this packet ends a bitstream
+int64 granulepos  # A number indicating the position of this packet in the decoded data
+int64 packetno    # Sequential number of this packet in the ogg bitstream
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

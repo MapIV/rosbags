@@ -1,0 +1,53 @@
+std_msgs/Header header
+controller_manager_msgs/ControllerStatistics[] controller
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: controller_manager_msgs/ControllerStatistics
+# This message contains the state of one realtime controller
+# that was spawned in the controller manager
+
+# the name of the controller
+string name
+
+# the type of the controller
+string type
+
+# the time at which these controller statistics were measured
+time timestamp
+
+# bool that indicates if the controller is currently
+# in a running or a stopped state
+bool running
+
+# the maximum time the update loop of the controller ever needed to complete
+duration max_time
+
+# the average time the update loop of the controller needs to complete.
+# the average is computed in a sliding time window.
+duration mean_time
+
+# the variance on the time the update loop of the controller needs to complete.
+# the variance applies to a sliding time window.
+duration variance_time
+
+# the number of times this controller broke the realtime loop
+int32 num_control_loop_overruns
+
+# the timestamp of the last time this controller broke the realtime loop
+time time_last_control_loop_overrun

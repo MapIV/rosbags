@@ -1,0 +1,9 @@
+int8 BACKWARD=-1
+int8 ZERO=0
+int8 FORWARD=1
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+int8 direction
+

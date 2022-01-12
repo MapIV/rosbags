@@ -1,0 +1,31 @@
+std_msgs/Header header
+
+bool front_wiping
+bool front_wiping_is_valid
+bool front_spraying
+bool front_spraying_is_valid
+bool rear_wiping
+bool rear_wiping_is_valid
+bool rear_spraying
+bool rear_spraying_is_valid
+bool spray_near_empty
+bool spray_near_empty_is_valid
+bool spray_empty
+bool spray_empty_is_valid
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

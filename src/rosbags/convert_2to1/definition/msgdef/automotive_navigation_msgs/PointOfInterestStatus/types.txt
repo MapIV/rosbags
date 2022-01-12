@@ -1,0 +1,7 @@
+uint64 guid
+float32 distance
+float32 heading
+float32 x_position
+float32 y_position
+string params
+

@@ -1,0 +1,27 @@
+std_msgs/Header header
+
+float64  sensor_height
+float64  clipping_height
+float64  min_point_distance
+float64  radial_divider_angle
+float64  concentric_divider_distance
+float64  local_max_slope
+float64  general_max_slope
+float64  min_height_threshold
+float64  reclass_distance_threshold
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

@@ -1,0 +1,11 @@
+byte RARMID=0
+byte LARMID=1
+string task_name
+int64 arm_id
+string state
+float64 state_value
+string direction
+float64 direction_value
+int64 touch_x
+int64 touch_y
+

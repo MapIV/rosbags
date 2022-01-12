@@ -1,0 +1,8 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_map_msgs/Wayarea[] data
+  int32 wayarea_id
+  int32 area_id
+

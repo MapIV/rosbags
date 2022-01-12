@@ -1,0 +1,35 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_msgs/ColorSet Red
+  autoware_msgs/ValueSet Hue
+    int32 center
+    int32 range
+  autoware_msgs/ValueSet Sat
+    int32 center
+    int32 range
+  autoware_msgs/ValueSet Val
+    int32 center
+    int32 range
+autoware_msgs/ColorSet Yellow
+  autoware_msgs/ValueSet Hue
+    int32 center
+    int32 range
+  autoware_msgs/ValueSet Sat
+    int32 center
+    int32 range
+  autoware_msgs/ValueSet Val
+    int32 center
+    int32 range
+autoware_msgs/ColorSet Green
+  autoware_msgs/ValueSet Hue
+    int32 center
+    int32 range
+  autoware_msgs/ValueSet Sat
+    int32 center
+    int32 range
+  autoware_msgs/ValueSet Val
+    int32 center
+    int32 range
+

@@ -1,0 +1,111 @@
+# This message defines a trajectory to move a camera along at and several options how to do that.  
+
+# Array of camera poses and interpolation speeds defining a trajectory.
+CameraMovement[] trajectory
+
+# Sets this as the camera attached (fixed) frame before movement.
+# An empty string will leave the attached frame unchanged.
+string target_frame
+
+# A flag indicating if the camera yaw axis is fixed to +Z of the camera attached_frame.
+# (defaults to false)
+bool allow_free_yaw_axis
+
+# The interaction style that should be activated when movement is done.
+uint8 mouse_interaction_mode
+uint8 NO_CHANGE = 0 # Leaves the control style unchanged.
+uint8 ORBIT     = 1 # Activates the Orbit-style controller.
+uint8 FPS       = 2 # Activates the First-Person-Shooter-style controller.
+
+# A flag to enable or disable user interaction.
+# (defaults to false so that interaction is enabled)
+bool interaction_disabled
+
+# If false, the duration of the animated trajectory is equal to the time passed in the real world using ros::WallTime.
+#  This can lead to an inconsistent frame rate of the published camera view images if your computer is not fast enough.
+# If true, the trajectory is rendered frame by frame. This leads to:
+#  -> a consistent frame rate of the published camera view images,
+#  -> a video with the desired trajectory duration when composed of the camera view images,
+#  -> BUT the trajectory might be slower in real time, if your computer is not fast enough. 
+# (defaults to false)
+bool render_frame_by_frame
+
+# Desired frames per second when rendering frame by frame.
+int8 frames_per_second
+
+================================================================================
+MSG: view_controller_msgs/CameraMovement
+# This message defines where to move a camera to and at which speeds.  
+
+# The target pose definition:
+
+# The frame-relative point to move the camera to.
+geometry_msgs/PointStamped eye
+
+# The frame-relative point for the focus (or pivot for an Orbit controller).
+# The camera points into the direction of the focus point at the end of the movement.
+geometry_msgs/PointStamped focus
+
+# The frame-relative vector that maps to "up" in the view plane.
+# In other words, a vector pointing to the top of the camera, in case you want to perform roll movements.
+geometry_msgs/Vector3Stamped up
+
+
+# Defines how long the transition from the current to the target camera pose should take.
+# Movements with a negative transition_duration will be ignored.
+duration transition_duration
+
+# The interpolation speed profile to use during this movement.
+uint8 interpolation_speed
+uint8 RISING    = 0 # Speed of the camera rises smoothly - resembles the first quarter of a sinus wave.
+uint8 DECLINING = 1 # Speed of the camera declines smoothly - resembles the second quarter of a sinus wave.
+uint8 FULL      = 2 # Camera is always at full speed - depending on transition_duration.
+uint8 WAVE      = 3 # RISING and DECLINING concatenated in one movement.
+
+================================================================================
+MSG: geometry_msgs/PointStamped
+# This represents a Point with reference coordinate frame and timestamp
+Header header
+Point point
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+
+================================================================================
+MSG: geometry_msgs/Vector3Stamped
+# This represents a Vector3 with reference coordinate frame and timestamp
+Header header
+Vector3 vector
+
+================================================================================
+MSG: geometry_msgs/Vector3
+# This represents a vector in free space. 
+# It is only meant to represent a direction. Therefore, it does not
+# make sense to apply a translation to it (e.g., when applying a 
+# generic rigid transformation to a Vector3, tf2 will only apply the
+# rotation). If you want your data to be translatable too, use the
+# geometry_msgs/Point message instead.
+
+float64 x
+float64 y
+float64 z

@@ -1,0 +1,10 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+jsk_recognition_msgs/Line[] lines
+  float64 x1
+  float64 y1
+  float64 x2
+  float64 y2
+

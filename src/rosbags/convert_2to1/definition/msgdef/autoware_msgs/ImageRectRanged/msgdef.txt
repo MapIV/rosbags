@@ -1,0 +1,13 @@
+ImageRect rect
+float32 range
+float32 min_height
+float32 max_height
+
+================================================================================
+MSG: autoware_msgs/ImageRect
+int32 x
+int32 y
+int32 height
+int32 width
+float32 score
+

@@ -1,0 +1,39 @@
+uint8 LINEAR=0
+uint8 SPHERICAL=1
+uint8 NO_CHANGE=0
+uint8 ORBIT=1
+uint8 FPS=2
+uint8 interpolation_mode
+string target_frame
+duration time_from_start
+geometry_msgs/PointStamped eye
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  geometry_msgs/Point point
+    float64 x
+    float64 y
+    float64 z
+geometry_msgs/PointStamped focus
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  geometry_msgs/Point point
+    float64 x
+    float64 y
+    float64 z
+geometry_msgs/Vector3Stamped up
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  geometry_msgs/Vector3 vector
+    float64 x
+    float64 y
+    float64 z
+uint8 mouse_interaction_mode
+bool interaction_disabled
+bool allow_free_yaw_axis
+

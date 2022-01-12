@@ -1,0 +1,66 @@
+uint8 COVARIANCE_TYPE_UNKNOWN=0
+uint8 COVARIANCE_TYPE_APPROXIMATED=1
+uint8 COVARIANCE_TYPE_DIAGONAL_KNOWN=2
+uint8 COVARIANCE_TYPE_KNOWN=3
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+gps_common/GPSStatus status
+  int16 STATUS_NO_FIX=-1
+  int16 STATUS_FIX=0
+  int16 STATUS_SBAS_FIX=1
+  int16 STATUS_GBAS_FIX=2
+  int16 STATUS_DGPS_FIX=18
+  int16 STATUS_WAAS_FIX=33
+  uint16 SOURCE_NONE=0
+  uint16 SOURCE_GPS=1
+  uint16 SOURCE_POINTS=2
+  uint16 SOURCE_DOPPLER=4
+  uint16 SOURCE_ALTIMETER=8
+  uint16 SOURCE_MAGNETIC=16
+  uint16 SOURCE_GYRO=32
+  uint16 SOURCE_ACCEL=64
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  uint16 satellites_used
+  int32[] satellite_used_prn
+  uint16 satellites_visible
+  int32[] satellite_visible_prn
+  int32[] satellite_visible_z
+  int32[] satellite_visible_azimuth
+  int32[] satellite_visible_snr
+  int16 status
+  uint16 motion_source
+  uint16 orientation_source
+  uint16 position_source
+float64 latitude
+float64 longitude
+float64 altitude
+float64 track
+float64 speed
+float64 climb
+float64 pitch
+float64 roll
+float64 dip
+float64 time
+float64 gdop
+float64 pdop
+float64 hdop
+float64 vdop
+float64 tdop
+float64 err
+float64 err_horz
+float64 err_vert
+float64 err_track
+float64 err_speed
+float64 err_climb
+float64 err_time
+float64 err_pitch
+float64 err_roll
+float64 err_dip
+float64[9] position_covariance
+uint8 position_covariance_type
+

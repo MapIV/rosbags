@@ -1,0 +1,109 @@
+byte CIRCLE=0
+byte LINE_STRIP=1
+byte LINE_LIST=2
+byte POLYGON=3
+byte POINTS=4
+byte FRAMES=5
+byte TEXT=6
+
+byte LINE_STRIP3D=7
+byte LINE_LIST3D=8
+byte POLYGON3D=9
+byte POINTS3D=10
+byte TEXT3D=11
+byte CIRCLE3D=12
+
+byte ADD=0
+byte REMOVE=1
+
+Header header
+string ns		# namespace, used with id to form a unique id
+int32 id          	# unique id within the namespace
+int32 type        	# CIRCLE/LINE_STRIP/etc.
+int32 action      	# ADD/REMOVE
+geometry_msgs/Point position # used for CIRCLE/TEXT, 2D in pixel-coords
+geometry_msgs/PointStamped position3D # used for 3DTEXT
+geometry_msgs/PoseStamped pose # used for CIRCLE3D
+float32 scale	 	# the diameter for a circle, etc.
+float32 width	 	# the width for a line, etc.
+std_msgs/ColorRGBA outline_color
+byte filled		# whether to fill in the shape with color
+std_msgs/ColorRGBA fill_color # color [0.0-1.0]
+duration lifetime       # How long the object should last before being automatically deleted.  0 means forever
+byte arc # used for CIRCLE3D
+float32 angle # used for CIRCLE3D
+
+
+geometry_msgs/Point[] points # used for LINE_STRIP/LINE_LIST/POLYGON/POINTS., 2D in pixel coords
+PointArrayStamped points3D # used for 3DLINE_STRIP/3DLINE_LIST/3DPOLYGON/3DPOINTS
+std_msgs/ColorRGBA[] outline_colors # a color for each line, point, etc.
+
+string[] frames # used for FRAMES, tf names
+string text             # used for TEXT, draw size of text is scale
+bool left_up_origin     # draw text from left up origin
+bool ratio_scale        #Use ratio respected to original image to specify scale and position
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+
+================================================================================
+MSG: geometry_msgs/PointStamped
+# This represents a Point with reference coordinate frame and timestamp
+Header header
+Point point
+
+================================================================================
+MSG: geometry_msgs/PoseStamped
+# A Pose with reference coordinate frame and timestamp
+Header header
+Pose pose
+
+================================================================================
+MSG: geometry_msgs/Pose
+# A representation of pose in free space, composed of position and orientation. 
+Point position
+Quaternion orientation
+
+================================================================================
+MSG: geometry_msgs/Quaternion
+# This represents an orientation in free space in quaternion form.
+
+float64 x
+float64 y
+float64 z
+float64 w
+
+================================================================================
+MSG: std_msgs/ColorRGBA
+float32 r
+float32 g
+float32 b
+float32 a
+
+================================================================================
+MSG: image_view2/PointArrayStamped
+Header header
+
+geometry_msgs/Point[] points
+
+

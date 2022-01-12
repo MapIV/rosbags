@@ -1,0 +1,42 @@
+sensor_msgs/Image image
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  uint32 height
+  uint32 width
+  string encoding
+  uint8 is_bigendian
+  uint32 step
+  uint8[] data
+sensor_msgs/CameraInfo info
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  uint32 height
+  uint32 width
+  string distortion_model
+  float64[] D
+  float64[9] K
+  float64[9] R
+  float64[12] P
+  uint32 binning_x
+  uint32 binning_y
+  sensor_msgs/RegionOfInterest roi
+    uint32 x_offset
+    uint32 y_offset
+    uint32 height
+    uint32 width
+    bool do_rectify
+posedetection_msgs/Feature1D features
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  posedetection_msgs/Curve1D[] lines
+    float32[] pts
+  float32[] descriptors
+  float32[] confidences
+  int32 descriptor_dim
+

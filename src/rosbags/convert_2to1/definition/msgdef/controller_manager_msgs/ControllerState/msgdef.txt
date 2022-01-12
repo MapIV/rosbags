@@ -1,0 +1,12 @@
+string name
+string state
+string type
+controller_manager_msgs/HardwareInterfaceResources[] claimed_resources
+
+================================================================================
+MSG: controller_manager_msgs/HardwareInterfaceResources
+# Type of hardware interface
+string hardware_interface
+# List of resources belonging to the hardware interface
+string[] resources
+

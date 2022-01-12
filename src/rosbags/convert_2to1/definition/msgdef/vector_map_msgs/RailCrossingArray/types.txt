@@ -1,0 +1,9 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+vector_map_msgs/RailCrossing[] data
+  int32 id
+  int32 aid
+  int32 linkid
+

@@ -1,0 +1,61 @@
+std_msgs/Header header
+uint32 id  # The numeric ID of the detected signal
+string label  # green, yellow, red
+float32 score  # The confidence score of the detected signal in the range [0-1]
+BoundingBox3D bbox  # A 3D bounding box
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: lgsvl_msgs/BoundingBox3D
+geometry_msgs/Pose position  # 3D position and orientation of the bounding box center in Lidar space, in meters
+geometry_msgs/Vector3 size  # Size of the bounding box, in meters
+
+================================================================================
+MSG: geometry_msgs/Pose
+# A representation of pose in free space, composed of position and orientation. 
+Point position
+Quaternion orientation
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+
+================================================================================
+MSG: geometry_msgs/Quaternion
+# This represents an orientation in free space in quaternion form.
+
+float64 x
+float64 y
+float64 z
+float64 w
+
+================================================================================
+MSG: geometry_msgs/Vector3
+# This represents a vector in free space. 
+# It is only meant to represent a direction. Therefore, it does not
+# make sense to apply a translation to it (e.g., when applying a 
+# generic rigid transformation to a Vector3, tf2 will only apply the
+# rotation). If you want your data to be translatable too, use the
+# geometry_msgs/Point message instead.
+
+float64 x
+float64 y
+float64 z

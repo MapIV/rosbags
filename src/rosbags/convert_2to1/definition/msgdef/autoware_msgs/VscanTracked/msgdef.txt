@@ -1,0 +1,17 @@
+geometry_msgs/Point position
+float32 orientation
+float32 velocity
+GeometricRectangle geo_rect
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+
+================================================================================
+MSG: autoware_msgs/GeometricRectangle
+float32 wl
+float32 wr
+float32 lf
+float32 lb

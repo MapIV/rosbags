@@ -1,0 +1,33 @@
+# User input (e.g. button presses) related to media controls
+std_msgs/Header header
+
+bool btn_vol_up
+bool btn_vol_down
+bool btn_mute
+bool btn_next
+bool btn_prev
+bool btn_next_hang_up
+bool btn_prev_answer
+bool btn_hang_up
+bool btn_answer
+bool btn_play
+bool btn_pause
+bool btn_play_pause
+bool btn_mode
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

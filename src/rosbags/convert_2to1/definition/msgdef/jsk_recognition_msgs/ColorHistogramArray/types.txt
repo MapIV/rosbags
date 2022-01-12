@@ -1,0 +1,11 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+jsk_recognition_msgs/ColorHistogram[] histograms
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  float32[] histogram
+

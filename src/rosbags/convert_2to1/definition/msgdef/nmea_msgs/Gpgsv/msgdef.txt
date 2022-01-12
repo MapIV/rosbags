@@ -1,0 +1,55 @@
+# Total number of satellites in view and data about satellites
+# Because the NMEA sentence is limited to 4 satellites per message, several
+# of these messages may need to be synthesized to get data about all visible
+# satellites.
+
+Header header
+
+string message_id
+
+# Number of messages in this sequence
+uint8 n_msgs
+# This messages number in its sequence. The first message is number 1.
+uint8 msg_number
+
+# Number of satellites currently visible
+uint8 n_satellites
+
+# Up to 4 satellites are described in each message
+GpgsvSatellite[] satellites
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: nmea_msgs/GpgsvSatellite
+# Satellite data structure used in GPGSV messages
+
+# PRN number of the satellite
+# GPS = 1..32
+# SBAS = 33..64
+# GLO = 65..96
+uint8 prn
+
+# Elevation, degrees. Maximum 90
+uint8 elevation
+
+# Azimuth, True North degrees. [0, 359]
+uint16 azimuth
+
+# Signal to noise ratio, 0-99 dB. -1 when null in NMEA sentence (not tracking)
+int8 snr
+

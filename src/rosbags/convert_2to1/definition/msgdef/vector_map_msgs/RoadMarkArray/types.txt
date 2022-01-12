@@ -1,0 +1,14 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+vector_map_msgs/RoadMark[] data
+  uint8 MARK=1
+  uint8 ARROW=2
+  uint8 CHARACTER=3
+  uint8 SIGN=4
+  int32 id
+  int32 aid
+  int32 type
+  int32 linkid
+

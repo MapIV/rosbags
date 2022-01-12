@@ -1,0 +1,17 @@
+int8 BACKINGUP=1
+int8 NEEDS_UNPLUGGING=2
+int8 NEEDS_PLUGGING=3
+int8 NEEDS_UNPLUGGING_BADLY=4
+int8 NEEDS_PLUGGING_BADLY=5
+int8 ALL=-1
+int8 PLAY_FILE=-2
+int8 SAY=-3
+int8 PLAY_STOP=0
+int8 PLAY_ONCE=1
+int8 PLAY_START=2
+int8 sound
+int8 command
+float32 volume
+string arg
+string arg2
+

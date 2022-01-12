@@ -1,0 +1,16 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+vector_map_msgs/Point[] data
+  int32 pid
+  float64 b
+  float64 l
+  float64 h
+  float64 bx
+  float64 ly
+  int32 ref
+  int32 mcode1
+  int32 mcode2
+  int32 mcode3
+

@@ -1,0 +1,14 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+jsk_recognition_msgs/HistogramWithRange[] histograms
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  jsk_recognition_msgs/HistogramWithRangeBin[] bins
+    float64 min_value
+    float64 max_value
+    uint32 count
+

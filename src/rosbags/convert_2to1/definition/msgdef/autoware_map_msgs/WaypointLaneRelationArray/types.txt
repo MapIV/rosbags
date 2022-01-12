@@ -1,0 +1,9 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_map_msgs/WaypointLaneRelation[] data
+  int32 waypoint_id
+  int32 lane_id
+  int32 order
+

@@ -1,0 +1,17 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+jsk_recognition_msgs/Object[] objects
+  int32 id
+  string name
+  int32 class_id
+  string class_name
+  string[] image_resources
+  string mesh_resource
+  float32 weight
+  geometry_msgs/Vector3 dimensions
+    float64 x
+    float64 y
+    float64 z
+

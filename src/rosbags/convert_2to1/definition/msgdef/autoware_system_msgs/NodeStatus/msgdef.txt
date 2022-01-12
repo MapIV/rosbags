@@ -1,0 +1,45 @@
+Header header
+string node_name
+bool node_activated
+autoware_system_msgs/DiagnosticStatusArray[] status
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_system_msgs/DiagnosticStatusArray
+autoware_system_msgs/DiagnosticStatus[] status
+================================================================================
+MSG: autoware_system_msgs/DiagnosticStatus
+Header header
+
+string key
+
+string value
+
+string description
+
+uint8 UNDEFINED = 0
+
+uint8 type
+uint8 OUT_OF_RANGE = 1
+uint8 RATE_IS_SLOW = 2
+uint8 HARDWARE = 255
+
+uint8 level
+uint8 OK = 1
+uint8 WARN = 2
+uint8 ERROR = 3
+uint8 FATAL = 4

@@ -55,6 +55,23 @@ Convert rosbag1 to rosbag2::
    rosbags-convert foo.bag --dst /path/to/bar
 
 
+Convert rosbag2 to rosbag1::
+
+   # Convert "foo", save the result as "bar.bag"
+   rosbags-convert-2to1 /path/to/foo --dst bar.bag
+
+
+Convert original messages from rosbag2 to rosbag1
+===========
+
+When you use original ros messages not listed in 'rosbags/src/rosbags/convert_2to1/definition/msg_list_example.txt', generating its definition::
+
+   cd rosbags/src/rosbags/convert_2to1/definition/
+   rosmsg list | grep "OriginalMessageType" > msg_list.txt
+   bash generate_msgdef.bash
+
+
+
 Documentation
 =============
 

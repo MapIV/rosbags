@@ -61,6 +61,7 @@ Convert rosbag2 to rosbag1 (only clone repository)::
    rosbags-convert-2to1 /path/to/foo
 
 Convert some continual rosbag2 files (only clone repository)::
+
    # Convert "foo0" and  "foo1", save the result as "foo0.bag" and "foo1.bag"
    # The sequence number in std_msgs/Header is continued from foo0.bag to foo1.bag
    rosbags-convert-2to1 /path/to/foo0 /path/to/foo1

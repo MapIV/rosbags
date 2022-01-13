@@ -42,20 +42,23 @@ def main() -> None:
     parser = argparse.ArgumentParser(description='Convert rosbag1 to rosbag2.')
     parser.add_argument(
         'src',
-        type=pathtype(),
+        #type=pathtype(),
+        nargs='+',
         help='source path to read rosbag1 from',
     )
-    parser.add_argument(
-        '--dst',
-        type=pathtype(exists=False),
-        help='destination path for rosbag2',
-    )
+    #parser.add_argument(
+    #    '--dst',
+    #    type=pathtype(exists=False),
+    #    help='destination path for rosbag2',
+    #)
     args = parser.parse_args()
-    try:
-        convert(args.src, args.dst)
-    except ConverterError as err:
-        print(f'ERROR: {err}')  # noqa: T001
-        sys.exit(1)
+    for filename in args.src:
+        try:
+            convert(filename, filename+'.bag')
+        except ConverterError as err:
+            print(f'ERROR: {err}')  # noqa: T001
+            sys.exit(1)
+    
 
 
 if __name__ == '__main__':

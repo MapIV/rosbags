@@ -119,8 +119,8 @@ def convert(src: Path, dst: Optional[Path]) -> None:
     """
 
     dst = dst if dst else src.with_suffix('')
-    if dst.exists():
-        raise ConverterError(f'Output path {str(dst)!r} exists already.')
+    #if dst.exists():
+    #    raise ConverterError(f'Output path {str(dst)!r} exists already.')
 
 
     msglist=[]

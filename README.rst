@@ -57,8 +57,13 @@ Convert rosbag1 to rosbag2::
 
 Convert rosbag2 to rosbag1 (only clone repository)::
 
-   # Convert "foo", save the result as "bar.bag"
-   rosbags-convert-2to1 /path/to/foo --dst bar.bag
+   # Convert "foo", save the result as "foo.bag"
+   rosbags-convert-2to1 /path/to/foo
+
+Convert some continual rosbag2 files (only clone repository)::
+   # Convert "foo0" and  "foo1", save the result as "foo0.bag" and "foo1.bag"
+   # The sequence number in std_msgs/Header is continued from foo0.bag to foo1.bag
+   rosbags-convert-2to1 /path/to/foo0 /path/to/foo1
 
 
 Convert original messages from rosbag2 to rosbag1
@@ -95,7 +100,7 @@ Development
 
 Clone the repository and setup your local checkout::
 
-   git clone https://gitlab.com/ternaris/rosbags.git
+   git clone https://gitlab.com/MapIV/rosbags.git
    
    cd rosbags
    python -m venv venv

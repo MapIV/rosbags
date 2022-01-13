@@ -17,5 +17,7 @@ __pycache__/
 
 /tools/messages/[^.]*
 
+*.tmp
+
 *.sw[op]
 /.vscode

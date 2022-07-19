@@ -87,7 +87,7 @@ class Reader:
 
         try:
             self.metadata = dct['rosbag2_bagfile_information']
-            if (ver := self.metadata['version']) > 4:
+            if (ver := self.metadata['version']) > 5:
                 raise ReaderError(f'Rosbag2 version {ver} not supported; please report issue.')
             if storageid := self.metadata['storage_identifier'] != 'sqlite3':
                 raise ReaderError(

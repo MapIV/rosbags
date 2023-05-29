@@ -1648,6 +1648,18 @@ class visualization_msgs__msg__MenuEntry:
     ROSLAUNCH: ClassVar[int] = 2
     __msgtype__: ClassVar[str] = 'visualization_msgs/msg/MenuEntry'
 
+@dataclass
+class velodyne_msgs__msg__VelodynePacket:
+    time: builtin_interfaces__msg__Time
+    data: list[int]
+    __msgtype__: ClassVar[str] = 'velodyne_msgs/msg/VelodynePacket'
+
+@dataclass
+class velodyne_msgs__msg__VelodyneScan:
+    header: std_msgs__msg__Header
+    packets: list[velodyne_msgs__msg__VelodynePacket]
+    __msgtype__: ClassVar[str] = 'velodyne_msgs/msg/VelodyneScan'
+
 
 FIELDDEFS: Typesdict = {
     'builtin_interfaces/msg/Duration': (
@@ -3017,4 +3029,18 @@ FIELDDEFS: Typesdict = {
             ('command_type', (1, 'uint8')),
         ],
     ),
+    'velodyne_msgs/msg/VelodynePacket': (
+        [],
+        [
+            ('time', (2, 'builtin_interfaces/msg/Time')),
+            ('data', (3, ((1, 'uint8'), 1206)))
+        ],
+    ),
+    'velodyne_msgs/msg/VelodyneScan': (
+        [],
+        [
+            ('header', (2, 'std_msgs/msg/Header')),
+            ('packets', (4, ((2, 'velodyne_msgs/msg/VelodynePacket'), None)))
+        ]
+    )
 }

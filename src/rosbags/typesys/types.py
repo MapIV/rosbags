@@ -1660,6 +1660,19 @@ class velodyne_msgs__msg__VelodyneScan:
     packets: list[velodyne_msgs__msg__VelodynePacket]
     __msgtype__: ClassVar[str] = 'velodyne_msgs/msg/VelodyneScan'
 
+@dataclass
+class pandar_msgs__msg__PandarPacket:
+    time: builtin_interfaces__msg__Time
+    data: list[int]
+    size: int
+    __msgtype__: ClassVar[str] = 'pandar_msgs/msg/PandarPacket'
+
+@dataclass
+class pandar_msgs__msg__PandarScan:
+    header: std_msgs__msg__Header
+    packets: list[pandar_msgs__msg__PandarPacket]
+    __msgtype__: ClassVar[str] = 'pandar_msgs/msg/PandarScan'
+
 
 FIELDDEFS: Typesdict = {
     'builtin_interfaces/msg/Duration': (
@@ -3042,5 +3055,20 @@ FIELDDEFS: Typesdict = {
             ('header', (2, 'std_msgs/msg/Header')),
             ('packets', (4, ((2, 'velodyne_msgs/msg/VelodynePacket'), None)))
         ]
-    )
+    ),
+    'pandar_msgs/msg/PandarPacket': (
+        [],
+        [
+            ('time', (2, 'builtin_interfaces/msg/Time')),
+            ('data', (3, ((1, 'uint8'), 1500))),
+            ('size', (1, 'uint32'))
+        ],
+    ),
+    'pandar_msgs/msg/PandarScan': (
+        [],
+        [
+            ('header', (2, 'std_msgs/msg/Header')),
+            ('packets', (4, ((2, 'pandar_msgs/msg/PandarPacket'), None)))
+        ]
+    ),
 }

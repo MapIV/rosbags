@@ -101,10 +101,10 @@ Development
 
 Clone the repository and setup your local checkout::
 
-   git clone https://gitlab.com/MapIV/rosbags.git
+   git clone https://github.com/MapIV/rosbags.git
    
    cd rosbags
-   python -m venv venv
+   python3 -m venv venv
    . venv/bin/activate
    
    pip install -r requirements-dev.txt

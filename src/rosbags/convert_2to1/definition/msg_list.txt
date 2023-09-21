@@ -1,2 +1,2 @@
-hesai_msgs/PandarPacket
-hesai_msgs/PandarScan
+pandar_msgs/PandarPacket
+pandar_msgs/PandarScan

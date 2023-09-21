@@ -1,0 +1,26 @@
+# Steering Control Message
+# Contains steering commands
+
+std_msgs/Header header
+
+string module_name # module name of the source node of this message
+
+float32 curvature           # Desired steering curvature (1/m)
+float32 max_curvature_rate  # Max rate of change for curvature (1/m/sec)
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

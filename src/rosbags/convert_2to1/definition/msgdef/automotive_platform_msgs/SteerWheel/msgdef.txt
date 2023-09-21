@@ -1,0 +1,26 @@
+# Steering Wheel Control Message with Mode
+# Contains steering wheel command and desired autonomy active mode flag
+
+std_msgs/Header header
+
+uint16 mode             # Is 1 if autonomy mode should be active
+
+float32 angle           # Desired steering wheel angle (rad)
+float32 angle_velocity  # Desired steering wheel angle max velocity (rad/sec)
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

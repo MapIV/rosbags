@@ -1,0 +1,8 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+int32 latency_num
+int32 waypoints_num
+float32 convergence_num
+

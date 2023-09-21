@@ -1,0 +1,32 @@
+# This consists of multiple Wayarea objects in a map. 
+
+Header header
+Wayarea[] data
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_map_msgs/Wayarea
+# This represents a wayarea in a map.
+# Way area is an area where vehicle are traversable. 
+
+# Id of this Wayarea object. Must unique among all Wayareas in a map
+int32 wayarea_id
+
+# Id of Area object that represents this wayarea. 
+int32 area_id
+

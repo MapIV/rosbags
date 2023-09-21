@@ -1,0 +1,11 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+vector_map_msgs/Line[] data
+  int32 lid
+  int32 bpid
+  int32 fpid
+  int32 blid
+  int32 flid
+

@@ -1,0 +1,67 @@
+std_msgs/Header header
+
+float32 speed_mps
+float32 throttle_pct  # 0 to 1
+float32 brake_pct     # 0 to 1
+float32 steer_pct     # -1 to 1
+bool parking_brake_active
+bool high_beams_active
+bool low_beams_active
+bool hazard_lights_active
+bool fog_lights_active
+bool left_turn_signal_active
+bool right_turn_signal_active
+bool wipers_active
+bool reverse_gear_active
+int8 selected_gear
+bool engine_active
+float32 engine_rpm
+float64 gps_latitude
+float64 gps_longitude
+float64 gps_altitude
+geometry_msgs/Quaternion orientation
+geometry_msgs/Vector3 linear_velocities
+
+int8 GEAR_NEUTRAL = 0
+int8 GEAR_DRIVE = 1
+int8 GEAR_REVERSE = 2
+int8 GEAR_PARKING = 3
+int8 GEAR_LOW = 4
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: geometry_msgs/Quaternion
+# This represents an orientation in free space in quaternion form.
+
+float64 x
+float64 y
+float64 z
+float64 w
+
+================================================================================
+MSG: geometry_msgs/Vector3
+# This represents a vector in free space. 
+# It is only meant to represent a direction. Therefore, it does not
+# make sense to apply a translation to it (e.g., when applying a 
+# generic rigid transformation to a Vector3, tf2 will only apply the
+# rotation). If you want your data to be translatable too, use the
+# geometry_msgs/Point message instead.
+
+float64 x
+float64 y
+float64 z

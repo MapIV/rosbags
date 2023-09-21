@@ -1,0 +1,49 @@
+int32 id
+time tracking_time
+time last_seen
+geometry_msgs/TwistWithCovariance velocity
+  geometry_msgs/Twist twist
+    geometry_msgs/Vector3 linear
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Vector3 angular
+      float64 x
+      float64 y
+      float64 z
+  float64[36] covariance
+geometry_msgs/Pose bounding_box_center
+  geometry_msgs/Point position
+    float64 x
+    float64 y
+    float64 z
+  geometry_msgs/Quaternion orientation
+    float64 x
+    float64 y
+    float64 z
+    float64 w
+geometry_msgs/Vector3 bounding_box_size
+  float64 x
+  float64 y
+  float64 z
+geometry_msgs/PoseWithCovariance object_box_center
+  geometry_msgs/Pose pose
+    geometry_msgs/Point position
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Quaternion orientation
+      float64 x
+      float64 y
+      float64 z
+      float64 w
+  float64[36] covariance
+geometry_msgs/Vector3 object_box_size
+  float64 x
+  float64 y
+  float64 z
+geometry_msgs/Point[] contour_points
+  float64 x
+  float64 y
+  float64 z
+

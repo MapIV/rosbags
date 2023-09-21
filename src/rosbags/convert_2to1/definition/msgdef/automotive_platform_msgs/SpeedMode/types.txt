@@ -1,0 +1,9 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+uint16 mode
+float32 speed
+float32 acceleration_limit
+float32 deceleration_limit
+

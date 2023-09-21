@@ -1,0 +1,14 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+pacmod_msgs/KeyValuePair[] enabled_status
+  string key
+  string value
+pacmod_msgs/KeyValuePair[] overridden_status
+  string key
+  string value
+pacmod_msgs/KeyValuePair[] fault_status
+  string key
+  string value
+

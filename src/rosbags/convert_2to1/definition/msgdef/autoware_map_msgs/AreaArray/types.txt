@@ -1,0 +1,8 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_map_msgs/Area[] data
+  int32 area_id
+  int32[] point_ids
+

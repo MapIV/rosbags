@@ -204,21 +204,30 @@ def generate_cdr_to_ros1(
     lines = [
         'import sys',
         'import numpy',
+        'import copy',
         'from rosbags.serde.messages import SerdeError, get_msgdef',
         'from rosbags.serde.primitives import pack_int32_le',
         'from rosbags.serde.primitives import unpack_int32_le',
-        f'def {funcname}(input, ipos, output, opos):',
+        f'def {funcname}(input, ipos, output, opos, seq):',
     ]
 
+
     if typename == 'std_msgs/msg/Header':
+        if copy:
+            lines.append('  pack_int32_le(output,opos,seq)')
+#            lines.append('  print(seq)')
+#            lines.append('  print(output[opos])')
         lines.append('  opos += 4')
+#        lines.append('  print(1)')
+#        lines.append('  print(type(output))')
+#        lines.append('  print(2)')
 
     for fcurr, fnext in zip(icurr, inext):
         _, desc = fcurr
 
         if desc.valtype == Valtype.MESSAGE:
             lines.append(f'  func = get_msgdef("{desc.args.name}").{funcname}')
-            lines.append('  ipos, opos = func(input, ipos, output, opos)')
+            lines.append('  ipos, opos = func(input, ipos, output, opos, seq)')
             aligned = align_after(desc)
 
         elif desc.valtype == Valtype.BASE:
@@ -276,7 +285,7 @@ def generate_cdr_to_ros1(
                 for _ in range(length):
                     if anext > anext_after:
                         lines.append(f'  ipos = (ipos + {anext} - 1) & -{anext}')
-                    lines.append('  ipos, opos = func(input, ipos, output, opos)')
+                    lines.append('  ipos, opos = func(input, ipos, output, opos, seq)')
                 aligned = anext_after
         else:
             assert desc.valtype == Valtype.SEQUENCE
@@ -318,7 +327,7 @@ def generate_cdr_to_ros1(
                 lines.append(f'  func = get_msgdef("{subdesc.args.name}").{funcname}')
                 lines.append('  for _ in range(size):')
                 lines.append(f'    ipos = (ipos + {anext} - 1) & -{anext}')
-                lines.append('    ipos, opos = func(input, ipos, output, opos)')
+                lines.append('    ipos, opos = func(input, ipos, output, opos, seq)')
                 aligned = align_after(subdesc)
 
             aligned = min([aligned, 4])

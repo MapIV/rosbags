@@ -1,0 +1,14 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+float32 score_threshold
+float32 group_threshold
+float32 slices_overlap
+float32 b_mean
+float32 g_mean
+float32 r_mean
+uint8 image_slices
+uint8 use_gpu
+uint8 gpu_device_id
+

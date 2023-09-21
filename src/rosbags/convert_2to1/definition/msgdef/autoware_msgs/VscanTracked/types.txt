@@ -1,0 +1,12 @@
+geometry_msgs/Point position
+  float64 x
+  float64 y
+  float64 z
+float32 orientation
+float32 velocity
+autoware_msgs/GeometricRectangle geo_rect
+  float32 wl
+  float32 wr
+  float32 lf
+  float32 lb
+

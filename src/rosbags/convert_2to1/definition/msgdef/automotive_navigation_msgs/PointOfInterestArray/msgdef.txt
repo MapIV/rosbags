@@ -1,0 +1,36 @@
+# Point of Interest List Message
+# Contains an array of points of interest
+# update_num is incremented each time a new list is sent
+
+std_msgs/Header header
+uint16 update_num
+automotive_navigation_msgs/PointOfInterest[] point_list
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: automotive_navigation_msgs/PointOfInterest
+# Point of Interest Message
+# Contains the guid, latitude, longitude, and other information for a point of interest
+
+uint64 guid        # Unique Id for this point
+
+float64 latitude   # Latitude (degrees)
+float64 longitude  # Longitude (degrees)
+
+string params      # List of parameter:value pairs
+

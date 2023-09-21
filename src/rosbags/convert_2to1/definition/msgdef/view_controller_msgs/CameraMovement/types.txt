@@ -1,0 +1,34 @@
+uint8 RISING=0
+uint8 DECLINING=1
+uint8 FULL=2
+uint8 WAVE=3
+geometry_msgs/PointStamped eye
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  geometry_msgs/Point point
+    float64 x
+    float64 y
+    float64 z
+geometry_msgs/PointStamped focus
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  geometry_msgs/Point point
+    float64 x
+    float64 y
+    float64 z
+geometry_msgs/Vector3Stamped up
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  geometry_msgs/Vector3 vector
+    float64 x
+    float64 y
+    float64 z
+duration transition_duration
+uint8 interpolation_speed
+

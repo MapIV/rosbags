@@ -1,0 +1,30 @@
+std_msgs/Header header
+
+float32 acceleration_pct  # 0 to 1
+float32 braking_pct  # 0 to 1
+float32 target_wheel_angle  # radians
+float32 target_wheel_angular_rate  # radians / second
+uint8 target_gear
+
+uint8 GEAR_NEUTRAL = 0
+uint8 GEAR_DRIVE = 1
+uint8 GEAR_REVERSE = 2
+uint8 GEAR_PARKING = 3
+uint8 GEAR_LOW = 4
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

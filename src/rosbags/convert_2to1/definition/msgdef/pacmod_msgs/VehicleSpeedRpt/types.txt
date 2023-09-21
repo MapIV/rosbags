@@ -1,0 +1,8 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+float64 vehicle_speed
+bool vehicle_speed_valid
+uint8[2] vehicle_speed_raw
+

@@ -1,0 +1,7 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+int32 lane_array_id
+int32 waypoint_index
+

@@ -1,0 +1,15 @@
+uint8 GEAR_NEUTRAL=0
+uint8 GEAR_DRIVE=1
+uint8 GEAR_REVERSE=2
+uint8 GEAR_PARKING=3
+uint8 GEAR_LOW=4
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+float32 acceleration_pct
+float32 braking_pct
+float32 target_wheel_angle
+float32 target_wheel_angular_rate
+uint8 target_gear
+

@@ -1,0 +1,81 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+int32 increment
+int32 lane_id
+autoware_msgs/Waypoint[] waypoints
+  int32 gid
+  int32 lid
+  geometry_msgs/PoseStamped pose
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    geometry_msgs/Pose pose
+      geometry_msgs/Point position
+        float64 x
+        float64 y
+        float64 z
+      geometry_msgs/Quaternion orientation
+        float64 x
+        float64 y
+        float64 z
+        float64 w
+  geometry_msgs/TwistStamped twist
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    geometry_msgs/Twist twist
+      geometry_msgs/Vector3 linear
+        float64 x
+        float64 y
+        float64 z
+      geometry_msgs/Vector3 angular
+        float64 x
+        float64 y
+        float64 z
+  autoware_msgs/DTLane dtlane
+    float64 dist
+    float64 dir
+    float64 apara
+    float64 r
+    float64 slope
+    float64 cant
+    float64 lw
+    float64 rw
+  int32 change_flag
+  autoware_msgs/WaypointState wpstate
+    uint8 NULLSTATE=0
+    uint8 STR_LEFT=1
+    uint8 STR_RIGHT=2
+    uint8 STR_STRAIGHT=3
+    uint8 STR_BACK=4
+    uint8 TYPE_STOPLINE=1
+    uint8 TYPE_STOP=2
+    uint8 TYPE_EVENT_NULL=0
+    uint8 TYPE_EVENT_GOAL=1
+    uint8 TYPE_EVENT_MIDDLE_GOAL=2
+    uint8 TYPE_EVENT_POSITION_STOP=3
+    uint8 TYPE_EVENT_BUS_STOP=4
+    uint8 TYPE_EVENT_PARKING=5
+    int32 aid
+    uint8 lanechange_state
+    uint8 steering_state
+    uint8 accel_state
+    uint8 stop_state
+    uint8 event_state
+  uint32 lane_id
+  uint32 left_lane_id
+  uint32 right_lane_id
+  uint32 stop_line_id
+  float32 cost
+  float32 time_cost
+  uint32 direction
+uint32 lane_index
+float32 cost
+float32 closest_object_distance
+float32 closest_object_velocity
+bool is_blocked
+

@@ -1,0 +1,15 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string[] bone_names
+jsk_recognition_msgs/Segment[] bones
+  geometry_msgs/Point start_point
+    float64 x
+    float64 y
+    float64 z
+  geometry_msgs/Point end_point
+    float64 x
+    float64 y
+    float64 z
+

@@ -1,0 +1,32 @@
+# Lane Boundary Array Message
+# Contains an array of lane boundaries contained in a section or segment of road
+
+automotive_navigation_msgs/LaneBoundary[] boundaries
+
+================================================================================
+MSG: automotive_navigation_msgs/LaneBoundary
+# Lane Boundary Message
+# Contains an array of points and other details
+
+uint8 UNKNOWN=0
+
+uint8 SOLID=1
+uint8 DASHED=2
+uint8 SOLID_DASHED=3
+uint8 DASHED_SOLID=4
+uint8 SOLID_SOLID=5
+uint8 style
+
+uint8 WHITE=1
+uint8 YELLOW=2
+uint8 color
+
+geometry_msgs/Point[] line
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+

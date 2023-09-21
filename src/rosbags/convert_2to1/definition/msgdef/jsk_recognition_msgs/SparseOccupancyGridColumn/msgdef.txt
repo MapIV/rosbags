@@ -1,0 +1,8 @@
+int32 column_index
+SparseOccupancyGridCell[] cells
+
+================================================================================
+MSG: jsk_recognition_msgs/SparseOccupancyGridCell
+int32 row_index
+float32 value
+

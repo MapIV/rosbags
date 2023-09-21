@@ -1,0 +1,14 @@
+string name
+string type
+ParamDescription[] parameters
+int32 parent 
+int32 id
+
+================================================================================
+MSG: dynamic_reconfigure/ParamDescription
+string name
+string type
+uint32 level
+string description
+string edit_method
+

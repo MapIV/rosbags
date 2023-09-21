@@ -1,0 +1,15 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+bool enabled
+bool override_active
+bool fault_active
+bool config_fault_active
+bool user_can_timeout
+bool brake_can_timeout
+bool steering_can_timeout
+bool vehicle_can_timeout
+bool subsystem_can_timeout
+bool user_can_read_errors
+

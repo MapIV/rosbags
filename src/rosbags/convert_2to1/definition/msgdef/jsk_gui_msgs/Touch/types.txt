@@ -1,0 +1,6 @@
+int64 finger_id
+float64 x
+float64 y
+int64 image_width
+int64 image_height
+

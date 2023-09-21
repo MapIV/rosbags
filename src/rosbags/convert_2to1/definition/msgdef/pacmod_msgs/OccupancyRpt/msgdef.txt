@@ -1,0 +1,31 @@
+std_msgs/Header header
+
+bool driver_seat_occupied
+bool driver_seat_occupied_is_valid
+bool passenger_seat_occupied
+bool passenger_seat_occupied_is_valid
+bool rear_seat_occupied
+bool rear_seat_occupied_is_valid
+bool driver_seatbelt_buckled
+bool driver_seatbelt_buckled_is_valid
+bool passenger_seatbelt_buckled
+bool passenger_seatbelt_buckled_is_valid
+bool rear_seatbelt_buckled
+bool rear_seatbelt_buckled_is_valid
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

@@ -1,0 +1,16 @@
+int32 KEY_PRESSED=1
+int32 MOUSE_LEFT_UP=2
+int32 MOUSE_LEFT_DOWN=3
+int32 MOUSE_MOVE=4
+int32 MOUSE_RIGHT_DOWN=5
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+int32 type
+int32 key
+int32 x
+int32 y
+int32 width
+int32 height
+

@@ -1,0 +1,14 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_msgs/TrafficLightResult[] results
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  int32 light_id
+  int32 recognition_result
+  string recognition_result_str
+  int32 lane_id
+

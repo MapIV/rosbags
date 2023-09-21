@@ -1,0 +1,84 @@
+Header header
+autoware_msgs/VehicleCmd vehicle_cmd
+int32 control_mode
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_msgs/VehicleCmd
+Header header
+autoware_msgs/SteerCmd steer_cmd
+autoware_msgs/AccelCmd accel_cmd
+autoware_msgs/BrakeCmd brake_cmd
+autoware_msgs/LampCmd lamp_cmd
+int32 gear
+int32 mode
+geometry_msgs/TwistStamped twist_cmd
+autoware_msgs/ControlCommand ctrl_cmd
+int32 emergency
+
+================================================================================
+MSG: autoware_msgs/SteerCmd
+Header header
+int32 steer
+
+================================================================================
+MSG: autoware_msgs/AccelCmd
+Header header
+int32 accel
+
+================================================================================
+MSG: autoware_msgs/BrakeCmd
+Header header
+int32 brake
+
+================================================================================
+MSG: autoware_msgs/LampCmd
+Header header
+int32 l
+int32 r
+
+================================================================================
+MSG: geometry_msgs/TwistStamped
+# A twist with reference coordinate frame and timestamp
+Header header
+Twist twist
+
+================================================================================
+MSG: geometry_msgs/Twist
+# This expresses velocity in free space broken into its linear and angular parts.
+Vector3  linear
+Vector3  angular
+
+================================================================================
+MSG: geometry_msgs/Vector3
+# This represents a vector in free space. 
+# It is only meant to represent a direction. Therefore, it does not
+# make sense to apply a translation to it (e.g., when applying a 
+# generic rigid transformation to a Vector3, tf2 will only apply the
+# rotation). If you want your data to be translatable too, use the
+# geometry_msgs/Point message instead.
+
+float64 x
+float64 y
+float64 z
+================================================================================
+MSG: autoware_msgs/ControlCommand
+float64 linear_velocity
+float64 linear_acceleration #m/s^2
+float64 steering_angle
+

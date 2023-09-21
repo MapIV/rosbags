@@ -1,0 +1,26 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string node_name
+bool node_activated
+autoware_system_msgs/DiagnosticStatusArray[] status
+  autoware_system_msgs/DiagnosticStatus[] status
+    uint8 UNDEFINED=0
+    uint8 OUT_OF_RANGE=1
+    uint8 RATE_IS_SLOW=2
+    uint8 HARDWARE=255
+    uint8 OK=1
+    uint8 WARN=2
+    uint8 ERROR=3
+    uint8 FATAL=4
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    string key
+    string value
+    string description
+    uint8 type
+    uint8 level
+

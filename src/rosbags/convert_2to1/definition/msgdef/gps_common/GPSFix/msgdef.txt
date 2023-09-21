@@ -1,0 +1,144 @@
+# A more complete GPS fix to supplement sensor_msgs/NavSatFix.
+Header header
+
+GPSStatus status
+
+# Latitude (degrees). Positive is north of equator; negative is south.
+float64 latitude
+
+# Longitude (degrees). Positive is east of prime meridian, negative west.
+float64 longitude
+
+# Altitude (meters). Positive is above reference (e.g., sea level).
+float64 altitude
+
+# Direction (degrees from north)
+float64 track
+
+# Ground speed (meters/second)
+float64 speed
+
+# Vertical speed (meters/second)
+float64 climb
+
+# Device orientation (units in degrees)
+float64 pitch
+float64 roll
+float64 dip
+
+# GPS time
+float64 time
+
+## Dilution of precision; Xdop<=0 means the value is unknown
+
+# Total (positional-temporal) dilution of precision
+float64 gdop
+
+# Positional (3D) dilution of precision
+float64 pdop
+
+# Horizontal dilution of precision
+float64 hdop
+
+# Vertical dilution of precision
+float64 vdop
+
+# Temporal dilution of precision
+float64 tdop
+
+## Uncertainty of measurement, 95% confidence
+
+# Spherical position uncertainty (meters) [epe]
+float64 err
+
+# Horizontal position uncertainty (meters) [eph]
+float64 err_horz
+
+# Vertical position uncertainty (meters) [epv]
+float64 err_vert
+
+# Track uncertainty (degrees) [epd]
+float64 err_track
+
+# Ground speed uncertainty (meters/second) [eps]
+float64 err_speed
+
+# Vertical speed uncertainty (meters/second) [epc]
+float64 err_climb
+
+# Temporal uncertainty [ept]
+float64 err_time
+
+# Orientation uncertainty (degrees)
+float64 err_pitch
+float64 err_roll
+float64 err_dip
+
+# Position covariance [m^2] defined relative to a tangential plane
+# through the reported position. The components are East, North, and
+# Up (ENU), in row-major order.
+
+float64[9] position_covariance
+
+uint8 COVARIANCE_TYPE_UNKNOWN = 0
+uint8 COVARIANCE_TYPE_APPROXIMATED = 1
+uint8 COVARIANCE_TYPE_DIAGONAL_KNOWN = 2
+uint8 COVARIANCE_TYPE_KNOWN = 3
+
+uint8 position_covariance_type
+
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: gps_common/GPSStatus
+Header header
+
+# Satellites used in solution
+uint16 satellites_used # Number of satellites
+int32[] satellite_used_prn # PRN identifiers
+
+# Satellites visible
+uint16 satellites_visible
+int32[] satellite_visible_prn # PRN identifiers
+int32[] satellite_visible_z # Elevation of satellites
+int32[] satellite_visible_azimuth # Azimuth of satellites
+int32[] satellite_visible_snr # Signal-to-noise ratios (dB)
+
+# Measurement status
+int16 STATUS_NO_FIX=-1   # Unable to fix position
+int16 STATUS_FIX=0       # Normal fix
+int16 STATUS_SBAS_FIX=1  # Fixed using a satellite-based augmentation system
+int16 STATUS_GBAS_FIX=2  #          or a ground-based augmentation system
+int16 STATUS_DGPS_FIX=18 # Fixed with DGPS
+int16 STATUS_WAAS_FIX=33 # Fixed with WAAS
+int16 status
+
+uint16 SOURCE_NONE=0 # No information is available
+uint16 SOURCE_GPS=1 # Using standard GPS location [only valid for position_source]
+uint16 SOURCE_POINTS=2 # Motion/orientation fix is derived from successive points
+uint16 SOURCE_DOPPLER=4 # Motion is derived using the Doppler effect
+uint16 SOURCE_ALTIMETER=8 # Using an altimeter
+uint16 SOURCE_MAGNETIC=16 # Using magnetic sensors
+uint16 SOURCE_GYRO=32 # Using gyroscopes
+uint16 SOURCE_ACCEL=64 # Using accelerometers
+
+uint16 motion_source # Source for speed, climb and track
+uint16 orientation_source # Source for device orientation
+uint16 position_source # Source for position
+
+

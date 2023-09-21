@@ -1,0 +1,26 @@
+std_msgs/Header header
+
+int8 latitude_degrees
+uint8 latitude_minutes
+uint8 latitude_seconds
+int8 longitude_degrees
+uint8 longitude_minutes
+uint8 longitude_seconds
+float64 heading
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

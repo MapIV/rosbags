@@ -1,0 +1,31 @@
+# This consists of multiple areas in a map with reference coordinate frame. 
+
+Header header
+Area[] data
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_map_msgs/Area
+# This represents a general purpose area obejct in map
+
+# Id of this Area object. Must be unique within all area objects.
+int32 area_id
+
+# Vertices that describes this area. Must be in clockwise order.
+int32[] point_ids
+

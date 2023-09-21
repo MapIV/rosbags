@@ -1,0 +1,8 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string module_name
+float32 curvature
+float32 max_curvature_rate
+

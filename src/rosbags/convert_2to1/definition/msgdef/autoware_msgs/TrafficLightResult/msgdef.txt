@@ -1,0 +1,39 @@
+# This message defines meta information for a traffic light status
+Header header
+
+# Each bulb is assigned with an Id
+# The TLR node convention is to use the yellow bulb's ID
+int32 light_id
+
+# The result as provided by the tlr nodes
+# Red and Yellow states are both treated as STOP
+# RED       = 0
+# YELLOW    = 0
+# GREEN     = 1
+# UNKNOWN   = 2
+int32 recognition_result
+
+# This string is used by the Audio Player
+string recognition_result_str
+
+# LaneId to which this traffic light result belongs to
+# this Id is defined by the ADAS MAP
+int32 lane_id
+
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

@@ -1,0 +1,11 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+vector_map_msgs/StopLine[] data
+  int32 id
+  int32 lid
+  int32 tlid
+  int32 signid
+  int32 linkid
+

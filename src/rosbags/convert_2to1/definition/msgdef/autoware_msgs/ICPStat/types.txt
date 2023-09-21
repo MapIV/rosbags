@@ -1,0 +1,10 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+float32 exe_time
+float32 score
+float32 velocity
+float32 acceleration
+int32 use_predict_pose
+

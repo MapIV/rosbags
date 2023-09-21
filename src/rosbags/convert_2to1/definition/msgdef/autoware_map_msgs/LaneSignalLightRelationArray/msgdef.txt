@@ -1,0 +1,31 @@
+# This consists of multiple LaneSignalLightRelation objects in a map. 
+
+Header header
+LaneSignalLightRelation[] data
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_map_msgs/LaneSignalLightRelation
+# This represents relation between a lane and a signal in a map.
+
+# Id of refering Lane object
+int32 lane_id
+
+# Id of SignalLight object that must be recognized when vehicle is driving the refering lane. 
+int32 signal_light_id
+

@@ -1,0 +1,47 @@
+# This consists of multiple Point objects in a map. 
+
+Header header
+Point[] data
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_map_msgs/Point
+# This represents a point in a map.
+
+# Id of this Point object. Must be unique among all points in a map.
+int32 point_id
+
+# Position of a point in MGRS coordinate [m]
+# x = northing
+# y = easting
+# z = elevation
+float64 x
+float64 y
+float64 z
+
+# Codes that describe coordinate of the x,y,z values. 
+int32 mgrs
+int32 epsg
+
+# PCD file name which that is relevant. 
+string pcd
+
+# latitude and longitude in WGS84 coordinate in [deg]
+float64 lat
+float64 lng
+

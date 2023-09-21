@@ -1,0 +1,15 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+bool door_open_front_right
+bool door_open_front_left
+bool door_open_rear_right
+bool door_open_rear_left
+bool hood_open
+bool trunk_open
+bool passenger_present
+bool passenger_airbag_enabled
+bool seatbelt_engaged_driver
+bool seatbelt_engaged_passenger
+

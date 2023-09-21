@@ -1,0 +1,13 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string name
+string module_name
+uint16 request_id
+uint16 cancel
+uint16 update_num
+uint16 guid_valid
+uint64 guid
+float32 tolerance
+

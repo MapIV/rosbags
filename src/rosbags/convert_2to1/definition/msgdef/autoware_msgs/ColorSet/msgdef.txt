@@ -1,0 +1,9 @@
+ValueSet Hue
+ValueSet Sat
+ValueSet Val
+
+================================================================================
+MSG: autoware_msgs/ValueSet
+int32 center
+int32 range
+

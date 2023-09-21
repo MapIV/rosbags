@@ -1,0 +1,32 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+uint32 id
+string label
+float32 score
+lgsvl_msgs/BoundingBox3D bbox
+  geometry_msgs/Pose position
+    geometry_msgs/Point position
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Quaternion orientation
+      float64 x
+      float64 y
+      float64 z
+      float64 w
+  geometry_msgs/Vector3 size
+    float64 x
+    float64 y
+    float64 z
+geometry_msgs/Twist velocity
+  geometry_msgs/Vector3 linear
+    float64 x
+    float64 y
+    float64 z
+  geometry_msgs/Vector3 angular
+    float64 x
+    float64 y
+    float64 z
+

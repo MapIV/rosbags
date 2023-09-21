@@ -1,0 +1,12 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string message_id
+string auto_manual_mode
+uint8 fix_mode
+uint8[] sv_ids
+float32 pdop
+float32 hdop
+float32 vdop
+

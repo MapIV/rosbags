@@ -1,0 +1,10 @@
+uint8 msg_counter
+uint16 engage
+uint16 disengage
+uint16 speed_up
+uint16 slow_down
+uint16 further
+uint16 closer
+uint16 right_turn
+uint16 left_turn
+

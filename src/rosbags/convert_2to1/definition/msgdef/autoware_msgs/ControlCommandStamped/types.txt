@@ -1,0 +1,9 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+autoware_msgs/ControlCommand cmd
+  float64 linear_velocity
+  float64 linear_acceleration
+  float64 steering_angle
+

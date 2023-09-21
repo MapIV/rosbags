@@ -1,0 +1,21 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+geometry_msgs/Pose origin_pose
+  geometry_msgs/Point position
+    float64 x
+    float64 y
+    float64 z
+  geometry_msgs/Quaternion orientation
+    float64 x
+    float64 y
+    float64 z
+    float64 w
+float32 resolution
+jsk_recognition_msgs/SparseOccupancyGridColumn[] columns
+  int32 column_index
+  jsk_recognition_msgs/SparseOccupancyGridCell[] cells
+    int32 row_index
+    float32 value
+

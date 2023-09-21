@@ -1,0 +1,42 @@
+# This consists of multiple LaneChangeRelation objects in a map. 
+
+Header header
+LaneChangeRelation[] data
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_map_msgs/LaneChangeRelation
+# This represents lanes that are next to each other.
+# This relation object is only made if the lane change is available. 
+
+# BlinkerType
+uint8 None = 0
+uint8 Left = 1
+uint8 Right = 2
+
+# Id of refering lane
+int32 lane_id
+
+# Id of lane that is next to the refering lane. 
+int32 next_lane_id
+
+# Represents blinker that must be lit when doing this lane change.
+# value of "blinker" must be one of "Blinker Type"
+# e.g. if next_lane_id is left of lane_id, then blinker = LEFT
+int32 blinker
+

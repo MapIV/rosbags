@@ -1,0 +1,93 @@
+Header header
+string[] available_nodes
+bool detect_too_match_warning
+autoware_system_msgs/NodeStatus[] node_status
+autoware_system_msgs/HardwareStatus[] hardware_status
+rosgraph_msgs/TopicStatistics[] topic_statistics
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+
+================================================================================
+MSG: autoware_system_msgs/NodeStatus
+Header header
+string node_name
+bool node_activated
+autoware_system_msgs/DiagnosticStatusArray[] status
+================================================================================
+MSG: autoware_system_msgs/DiagnosticStatusArray
+autoware_system_msgs/DiagnosticStatus[] status
+================================================================================
+MSG: autoware_system_msgs/DiagnosticStatus
+Header header
+
+string key
+
+string value
+
+string description
+
+uint8 UNDEFINED = 0
+
+uint8 type
+uint8 OUT_OF_RANGE = 1
+uint8 RATE_IS_SLOW = 2
+uint8 HARDWARE = 255
+
+uint8 level
+uint8 OK = 1
+uint8 WARN = 2
+uint8 ERROR = 3
+uint8 FATAL = 4
+================================================================================
+MSG: autoware_system_msgs/HardwareStatus
+std_msgs/Header header
+string hardware_name
+autoware_system_msgs/DiagnosticStatusArray[] status
+================================================================================
+MSG: rosgraph_msgs/TopicStatistics
+# name of the topic
+string topic
+
+# node id of the publisher
+string node_pub
+
+# node id of the subscriber
+string node_sub
+
+# the statistics apply to this time window
+time window_start
+time window_stop
+
+# number of messages delivered during the window
+int32 delivered_msgs
+# numbers of messages dropped during the window
+int32 dropped_msgs
+
+# traffic during the window, in bytes
+int32 traffic
+
+# mean/stddev/max period between two messages
+duration period_mean
+duration period_stddev
+duration period_max
+
+# mean/stddev/max age of the message based on the
+# timestamp in the message header. In case the
+# message does not have a header, it will be 0.
+duration stamp_age_mean
+duration stamp_age_stddev
+duration stamp_age_max
+

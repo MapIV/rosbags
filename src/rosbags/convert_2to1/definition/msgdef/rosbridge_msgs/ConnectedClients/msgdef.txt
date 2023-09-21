@@ -1,0 +1,7 @@
+ConnectedClient[] clients
+
+================================================================================
+MSG: rosbridge_msgs/ConnectedClient
+string ip_address
+time connection_time
+

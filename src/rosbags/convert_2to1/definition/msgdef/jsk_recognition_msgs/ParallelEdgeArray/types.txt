@@ -1,0 +1,22 @@
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+jsk_recognition_msgs/ParallelEdge[] edge_groups
+  std_msgs/Header header
+    uint32 seq
+    time stamp
+    string frame_id
+  pcl_msgs/PointIndices[] cluster_indices
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    int32[] indices
+  pcl_msgs/ModelCoefficients[] coefficients
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    float32[] values
+

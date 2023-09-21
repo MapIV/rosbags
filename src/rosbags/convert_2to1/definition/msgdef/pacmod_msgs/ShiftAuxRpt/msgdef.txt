@@ -1,0 +1,29 @@
+std_msgs/Header header
+
+bool between_gears
+bool between_gears_is_valid
+bool stay_in_neutral_mode
+bool stay_in_neutral_mode_is_valid
+bool brake_interlock_active
+bool brake_interlock_active_is_valid
+bool speed_interlock_active
+bool speed_interlock_active_is_valid
+bool gear_number_avail
+int8 gear_number
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+string frame_id
+

@@ -3059,7 +3059,7 @@ FIELDDEFS: Typesdict = {
     'pandar_msgs/msg/PandarPacket': (
         [],
         [
-            ('time', (2, 'builtin_interfaces/msg/Time')),
+            ('stamp', (2, 'builtin_interfaces/msg/Time')),
             ('data', (3, ((1, 'uint8'), 1500))),
             ('size', (1, 'uint32'))
         ],
